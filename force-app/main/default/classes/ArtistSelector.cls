@@ -1,3 +1,10 @@
+/**
+ * @description       : This class provides methods to retrieve artists from the Artist__c custom object.
+ * @author            : Leonardo Luna 
+ * @group             : 
+ * @last modified on  : 08-11-2025
+ * @last modified by  : Leonardo Luna 
+**/
 public with sharing class ArtistSelector {
      public static List<Artist__c> getAllArtists() {
         return [
@@ -15,7 +22,7 @@ public with sharing class ArtistSelector {
             WHERE Id = :artistId
             LIMIT 1
         ];
-        return artists.isEmpty() ? null : artists[0];
+       
     }
 
     // Get artists by genre
@@ -26,8 +33,5 @@ public with sharing class ArtistSelector {
             WHERE Genre__c = :genre
             ORDER BY Name ASC
         ];
-    }
-    public ArtistSelector() {
-
     }
 }
